@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+{% block title %}Add Student{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6 col-lg-5">
+        <div class="glass-card p-4 p-md-5">
+            <h2 class="gradient-text mb-4 text-center">Add Student</h2>
+
+            <form method="POST">
+                {% csrf_token %}
+                {% bootstrap_form add_form %}
+                <div class="d-grid gap-2 mt-4">
+                    <button type="submit" class="btn btn-gradient btn-lg">Add Student</button>
+                    <a href="{% url 'all_student' %}" class="btn btn-outline-light">← Back to All Students</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
